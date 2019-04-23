@@ -14,4 +14,4 @@ M. Barbeau, [Recognizing Drone Swarm Activities: Classical versus Quantum Machin
 
 ## Qiskit
 
-[Example from Section 1.2.3 in Ref. [Schuld & Petruccione, 2018]](https://github.com/michelbarbeau/Quantum-Machine-Learning/blob/master/Schuld_Petruccion_2018_sim.py)
+[Example from Section 1.2.3 in Ref. [Schuld & Petruccione, 2018] (simulation version)](https://github.com/michelbarbeau/Quantum-Machine-Learning/blob/master/Schuld_Petruccion_2018_sim.py)
