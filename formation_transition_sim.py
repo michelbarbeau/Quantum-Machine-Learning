@@ -1,4 +1,4 @@
-# Quantum Machine Learning Example: Drone Formation Transition 
+# Quantum Machine Learning Example: Drone Formation Transition (simulation version)
 #
 # Author: Michel Barbeau, Carleton University
 # Version: April 23, 2019
