@@ -11,6 +11,10 @@
 #    source activate quantum
 #    pythonw Schuld_Petruccion_2018_sim.py
 #
+# Sample execution:
+#   pythonw Schuld_Petruccion_2018_sim.py 
+#   Probability of label 0 (1) is 0.438 (0.562)
+#
 # Init of Qiskit environment
 #
 # Qiskit numbers qubits right to left: q3,q2,q1,q0
@@ -55,7 +59,7 @@ from qiskit import BasicAer
 # Use Aer's qasm_simulator
 backend_sim = BasicAer.get_backend('qasm_simulator')
 # Execute the circuit on the qasm (local) simulator
-shots=1024*10
+shots=1024
 job = execute(circ, backend_sim, shots=shots)
 #
 # Print the results 
