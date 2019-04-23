@@ -14,9 +14,10 @@
 # Sample execution:
 #   pythonw Schuld_Petruccion_2018_dev.py 
 #   Available backends:
-#   The best backend is ibmq_16_melbourne
+#   [<IBMQBackend('ibmqx4') from IBMQ()>, <IBMQBackend('ibmqx2') from IBMQ()>, <IBMQBackend('ibmq_16_melbourne') from IBMQ()>, <IBMQBackend('ibmq_qasm_simulator') from IBMQ()>]
+#   The best backend is ibmqx2
 #   Job Status: job has successfully run
-#   Probability of label 0 (1) is 0.418 (0.582)
+#   Probability of label 0 (1) is 0.581 (0.419)
 #
 # Init of Qiskit environment
 #
@@ -54,7 +55,6 @@ circ.h(q[3])
 circ.measure(q[3], c[1])
 # Measure rightmost qubit
 circ.measure(q[0], c[0])
-circ.draw(output='mpl')
 #
 # Running on IBM Q
 #
@@ -63,7 +63,7 @@ from qiskit import IBMQ
 IBMQ.load_accounts()
 # List available devices
 print("Available backends:")
-IBMQ.backends()
+print(IBMQ.backends())
 # Choose device with least busy queue
 from qiskit.providers.ibmq import least_busy
 large_enough_devices = IBMQ.backends(filters=lambda x: x.configuration().n_qubits > 3 and not x.configuration().simulator)
