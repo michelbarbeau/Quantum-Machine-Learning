@@ -5,7 +5,7 @@
 # Note: In [Schuld & Petruccione, 2018] there is an error p. 16, 3rd equation.
 #
 # Author: Michel Barbeau, Carleton University
-# Version: April 22, 2019
+# Version: April 23, 2019
 #
 # Run with: (where "quantum" is the name of your Python quantum environment)
 #    source activate quantum
@@ -34,7 +34,7 @@ import numpy
 # Create a 4 qubit quantum register
 q = QuantumRegister(4)
 # Create a classical register for measurements
-c = ClassicalRegister(4)
+c = ClassicalRegister(2)
 # Create a quantum circuit with innput q & output c
 circ = QuantumCircuit(q,c)
 # Initialize the register content
@@ -48,11 +48,11 @@ v[11] = 0.500011000363013/2 # |1011>
 v[12] = 0.866019052628739/2 # |1100>
 v[14] = 0.500011000363013/2 # |1110>
 circ.initialize(v, q)
-# Add a H gate on qubit 3 (left most)
+# Add a H gate on qubit 3 (leftmost)
 circ.h(q[3])
 # Measure leftmost qubit
-circ.measure(q[3], c[3])
-# Measure leftmost qubit
+circ.measure(q[3], c[1])
+# Measure rightmost qubit
 circ.measure(q[0], c[0])
 circ.draw(output='mpl')
 #
@@ -85,6 +85,5 @@ result = job.result()
 counts = result.get_counts(circ)
 # Calculate probability of label 1
 # q4=0 & q0=1 over q4=0 & (q0=0 or q0=1)
-p1 = counts.get('0001',0) / \
-     (counts.get('0000',0)+counts.get('0001')) 
+p1 = counts.get('01',0) / (counts.get('00',0)+counts.get('01')) 
 print("Probability of label 0 (1) is %.3f (%.3f)" % ((1-p1),p1))
